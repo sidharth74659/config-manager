@@ -1,0 +1,340 @@
+{
+    "General": [
+        {
+            "name": "NODE_PORT",
+            "type": "number",
+            "required": true,
+            "defaultValue": 3000,
+            "currentValue": 3000,
+            "description": "The port on which the Node.js server will run."
+        },
+        {
+            "name": "NODE_ENV",
+            "type": "select",
+            "required": true,
+            "defaultValue": "development",
+            "currentValue": "development",
+            "description": "The environment in which the Node.js server is running.",
+            "options": [
+                "development",
+                "production"
+            ]
+        },
+        {
+            "name": "UV_THREADPOOL_SIZE",
+            "type": "number",
+            "required": true,
+            "defaultValue": 4,
+            "currentValue": 4,
+            "description": "The size of the thread pool."
+        }
+    ],
+    "EBS Details": [
+        {
+            "name": "DB_USER",
+            "type": "text",
+            "required": true,
+            "defaultValue": "apps",
+            "currentValue": "apps",
+            "description": "The database user."
+        },
+        {
+            "name": "DB_PASSWORD",
+            "type": "text",
+            "required": true,
+            "defaultValue": "apps",
+            "currentValue": "apps",
+            "description": "The database password."
+        },
+        {
+            "name": "DB_CONNECTION_STRING",
+            "type": "text",
+            "required": true,
+            "defaultValue": "test122.propelapps.com:1521/EBSDB",
+            "currentValue": "test122.propelapps.com:1521/EBSDB",
+            "description": "The database connection string."
+        },
+        {
+            "name": "DB_STATUS_TIME_PERIOD",
+            "type": "number",
+            "required": true,
+            "defaultValue": 30000,
+            "currentValue": 30000,
+            "description": "The time period for checking the database status."
+        },
+        {
+            "name": "DB_EXTERNAL_AUTH",
+            "type": "select",
+            "required": true,
+            "defaultValue": "false",
+            "currentValue": "false",
+            "description": "Enable or disable external authentication.",
+            "options": [
+                "true",
+                "false"
+            ]
+        },
+        {
+            "name": "DRAIN_TIME_FOR_CLOSING_POOL",
+            "type": "number",
+            "required": true,
+            "defaultValue": 5,
+            "currentValue": 5,
+            "description": "The estimated time in seconds required to drain the pool using the drain method."
+        }
+    ],
+    "Logging Details": [
+        {
+            "name": "INFO_LOG_DESTINATION",
+            "type": "text",
+            "required": true,
+            "defaultValue": "./logs/info.log",
+            "currentValue": "./logs/info.log",
+            "description": "The destination for info logs."
+        },
+        {
+            "name": "COMBINED_LOG_DESTINATION",
+            "type": "text",
+            "required": true,
+            "defaultValue": "./logs/combined.log",
+            "currentValue": "./logs/combined.log",
+            "description": "The destination for combined logs."
+        },
+        {
+            "name": "ERROR_LOG_DESTINATION",
+            "type": "text",
+            "required": true,
+            "defaultValue": "./logs/error.log",
+            "currentValue": "./logs/error.log",
+            "description": "The destination for error logs."
+        },
+        {
+            "name": "DEBUG_LOG_DESTINATION",
+            "type": "text",
+            "required": true,
+            "defaultValue": "./logs/debug.log",
+            "currentValue": "./logs/debug.log",
+            "description": "The destination for debug logs."
+        },
+        {
+            "name": "LOG_RETENTION_CRON_SCHEDULE",
+            "type": "text",
+            "required": true,
+            "defaultValue": "0 0 * * *",
+            "currentValue": "0 0 * * *",
+            "description": "The cron schedule for log retention."
+        },
+        {
+            "name": "LOG_RETENTION_MAX_SIZE_IN_MB",
+            "type": "number",
+            "required": true,
+            "defaultValue": 32,
+            "currentValue": 32,
+            "description": "The maximum size of logs in MB."
+        },
+        {
+            "name": "ENABLE_DEBUG_LOG",
+            "type": "select",
+            "required": true,
+            "defaultValue": "true",
+            "currentValue": "true",
+            "description": "Enable or disable debug logs.",
+            "options": [
+                "true",
+                "false"
+            ]
+        },
+        {
+            "name": "ENABLE_CONSOLE_LOGS",
+            "type": "select",
+            "required": true,
+            "defaultValue": "true",
+            "currentValue": "true",
+            "description": "Enable or disable console logs.",
+            "options": [
+                "true",
+                "false"
+            ]
+        },
+        {
+            "name": "LOG_MAX_SIZE",
+            "type": "number",
+            "required": true,
+            "defaultValue": 30,
+            "currentValue": 30,
+            "description": "The maximum size of logs."
+        },
+        {
+            "name": "LOG_ROTATION_PERIOD",
+            "type": "number",
+            "required": true,
+            "defaultValue": 1,
+            "currentValue": 1,
+            "description": "The log rotation period."
+        }
+    ],
+    "Tracing Details": [
+        {
+            "name": "ENABLE_TRACING",
+            "type": "select",
+            "required": true,
+            "defaultValue": "false",
+            "currentValue": "false",
+            "description": "Enable or disable tracing.",
+            "options": [
+                "true",
+                "false"
+            ]
+        },
+        {
+            "name": "SERVICE_NAME",
+            "type": "text",
+            "required": true,
+            "defaultValue": "ACME_Server",
+            "currentValue": "ACME_Server",
+            "description": "The name of the service."
+        },
+        {
+            "name": "TRACING_PATH",
+            "type": "text",
+            "required": true,
+            "defaultValue": "http://some.path:4318/v1/traces",
+            "currentValue": "http://some.path:4318/v1/traces",
+            "description": "The path for tracing."
+        },
+        {
+            "name": "TRACING_LOG_LEVEL",
+            "type": "select",
+            "required": true,
+            "defaultValue": "INFO",
+            "currentValue": "INFO",
+            "description": "The log level for tracing.",
+            "options": [
+                "DEBUG",
+                "INFO",
+                "WARN",
+                "ERROR"
+            ]
+        }
+    ],
+    "Database Details": [
+        {
+            "name": "QUERY_TIME_OUT_PERIOD",
+            "type": "number",
+            "required": true,
+            "defaultValue": 60000,
+            "currentValue": 60000,
+            "description": "The query timeout period in milliseconds."
+        },
+        {
+            "name": "MAX_DB_RESPONSE_SIZE_FOR_GET_API",
+            "type": "number",
+            "required": true,
+            "defaultValue": 12000000,
+            "currentValue": 12000000,
+            "description": "The maximum database response size for GET API."
+        },
+        {
+            "name": "MAX_DB_RESPONSE_SIZE_FOR_POST_API",
+            "type": "number",
+            "required": true,
+            "defaultValue": 12000000,
+            "currentValue": 12000000,
+            "description": "The maximum database response size for POST API."
+        },
+        {
+            "name": "DB_MIN_POOL_CONNECTIONS",
+            "type": "number",
+            "required": true,
+            "defaultValue": 1,
+            "currentValue": 1,
+            "description": "The minimum number of pool connections."
+        },
+        {
+            "name": "DB_MAX_POOL_CONNECTIONS",
+            "type": "number",
+            "required": true,
+            "defaultValue": 1,
+            "currentValue": 1,
+            "description": "The maximum number of pool connections."
+        }
+    ],
+    "Cloud Details": [
+        {
+            "name": "CLOUD_HOST_URL",
+            "type": "text",
+            "required": true,
+            "defaultValue": "edrx-dev1.fa.us2.oraclecloud.com",
+            "currentValue": "edrx-dev1.fa.us2.oraclecloud.com",
+            "description": "The cloud host URL."
+        },
+        {
+            "name": "CLOUD_AUTHORIZATION_TOKEN",
+            "type": "text",
+            "required": true,
+            "defaultValue": "UmFqLmNsZDI6UHJvcGVsQDEyMw==",
+            "currentValue": "UmFqLmNsZDI6UHJvcGVsQDEyMw==",
+            "description": "The cloud authorization token."
+        }
+    ],
+    "Email Details": [
+        {
+            "name": "EMAIL_USERNAME",
+            "type": "text",
+            "required": true,
+            "defaultValue": "suryad@propelapps.com",
+            "currentValue": "suryad@propelapps.com",
+            "description": "The email username."
+        },
+        {
+            "name": "EMAIL_PASSWORD",
+            "type": "text",
+            "required": true,
+            "defaultValue": "Propel@123",
+            "currentValue": "Propel@123",
+            "description": "The email password."
+        }
+    ],
+    "Security Details": [
+        {
+            "name": "ENABLE_JWT",
+            "type": "select",
+            "required": true,
+            "defaultValue": "false",
+            "currentValue": "false",
+            "description": "Enable or disable JWT.",
+            "options": [
+                "true",
+                "false"
+            ]
+        },
+        {
+            "name": "JWT_EXPIRY_TIME",
+            "type": "text",
+            "required": true,
+            "defaultValue": "2d",
+            "currentValue": "2d",
+            "description": "The JWT expiry time."
+        },
+        {
+            "name": "JWT_SECRET_KEY",
+            "type": "text",
+            "required": true,
+            "defaultValue": "jwtsecretkey",
+            "currentValue": "jwtsecretkey",
+            "description": "The JWT secret key."
+        },
+        {
+            "name": "ENABLE_ACCOUNT_LOCKOUT_POLICY",
+            "type": "select",
+            "required": true,
+            "defaultValue": "false",
+            "currentValue": "false",
+            "description": "Enable or disable account lockout policy.",
+            "options": [
+                "true",
+                "false"
+            ]
+        }
+    ]
+}

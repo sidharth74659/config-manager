@@ -1,0 +1,23 @@
+{
+    "fields": [
+      {
+        "name": "API_KEY",
+        "type": "text",
+        "label": "API Key",
+        "required": true
+      },
+      {
+        "name": "DEBUG",
+        "type": "checkbox",
+        "label": "Debug Mode",
+        "required": false
+      },
+      {
+        "name": "LOG_LEVEL",
+        "type": "select",
+        "label": "Log Level",
+        "options": ["info", "warn", "error", "debug"],
+        "required": true
+      }
+  ]
+}
